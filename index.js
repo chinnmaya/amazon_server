@@ -3,7 +3,7 @@ const authRoute=require('./routes/auth')
 const mongoose=require('mongoose')
 const app=express();
 const DB='mongodb+srv://babun:babun12345@cluster0.y99ptqf.mongodb.net/?retryWrites=true&w=majority'
-const PORT=3000;
+const PORT=process.env.PORT || 3000;
 app.use(express.json())
 app.use(authRoute)
 mongoose.connect(DB).then(()=>{
